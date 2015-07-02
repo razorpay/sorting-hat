@@ -1,5 +1,6 @@
 require 'pp'
 require 'json'
+require 'full-name-splitter'
 
 def validate(params)
   unless params.has_key? 'name'
@@ -28,10 +29,10 @@ post '/' do
 
   # Get data from clearbit
   begin
-    clearbit_response = Clearbit::Streaming::PersonCompany(email: params['email'])
+    clearbit_response = Clearbit::Streaming::PersonCompany[email: params['email']]
   rescue Exception => e
     status 503
-    body "Error in clearbit configuration or API"
+    body "Error in clearbit configuration or API: #{e.message}"
     return
   end
 
