@@ -62,6 +62,10 @@ post '/' do
   status 204
 end
 
+def html(view)
+  File.read(File.join('public', "#{view.to_s}.html"))
+end
+
 get '/' do
-  "Sorting Hat"
+  html :index
 end
