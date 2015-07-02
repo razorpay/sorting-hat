@@ -39,8 +39,8 @@ post '/' do
   clearbit_response.merge!(
     email: params['email'],
     given_name: first_name,
-    family_name: last_name
-    message: "New Signup",
+    family_name: last_name,
+    message: "New Signup"
   )
 
   # Send it to slack
