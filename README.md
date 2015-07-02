@@ -1,4 +1,4 @@
-# Sorting Hat
+![Sorting Hat](public/logo.png)
 
 Web API wrapper over the clearbit-slack integration gem. Just make the following curl
 request from your application to put information in your slack channel.
