@@ -31,8 +31,14 @@ post '/' do
   begin
     clearbit_response = Clearbit::Streaming::PersonCompany[email: params['email']]
   rescue Exception => e
+    Clearbit::Slack.ping({
+      email: params['email'],
+      given_name: first_name,
+      family_name: last_name,
+      message: "New Signup"
+    })
     status 503
-    body "Error in clearbit configuration or API: #{e.message}"
+    body "Error in clearbit configuration or API. Posted to Slack Directly"
     return
   end
 

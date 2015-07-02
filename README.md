@@ -19,7 +19,7 @@ The API will respond with a JSON response with correct HTTP status code. The one
 - 502: Slack returned an error
 - 503: ClearBit returned an error
 
-No content is returned as part of the response. 
+No content is returned as part of the response. If your Clearbit runs out of quota, it will just post the name and email directly to Slack.
 
 ## License
 Licensed under MIT. Please see LICENSE.
