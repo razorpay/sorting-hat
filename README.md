@@ -21,5 +21,9 @@ The API will respond with a JSON response with correct HTTP status code. The one
 
 No content is returned as part of the response. If your Clearbit runs out of quota, it will just post the name and email directly to Slack.
 
+## Why
+
+The `clearbit-slack` gem works perfectly, however, it only integrates with your application if you are on a ruby stack. In fact, the sample code in their README assumes a Rails setup. Since we are not on Rails, we wrote a simple http wrapper over the gem that we can easily hit from our own app.
+
 ## License
 Licensed under MIT. Please see LICENSE.
