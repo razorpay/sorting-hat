@@ -3,7 +3,14 @@
 Web API wrapper over the clearbit-slack integration gem. Just make the following curl
 request from your application to put information in your slack channel.
 
-    curl -d "email=shashank@razorpay.com" "https://app-url.herokuapp.com/"
+    curl -d "email=shashank@razorpay.com&name=Shashank Kumar" "https://app-url.herokuapp.com/"
+
+The allowed parameters are:
+
+- email: Must be a valid email address
+- name: This is broken into given and family names and sent to clearbit
+- message: Message to be used while posting to slack. Uses slack formatting.
+  You can put a link to the user profile here, for eg.
 
 The environment variables, set in Heroku are:
 
