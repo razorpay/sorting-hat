@@ -29,7 +29,7 @@ post '/' do
 
   # Get data from clearbit
   begin
-    clearbit_response = Clearbit::Streaming::PersonCompany[email: params['email']]
+    clearbit_response = Clearbit::Enrichment.find(email: params['email'], stream: true)
   rescue Exception => e
     Clearbit::Slack.ping({
       email: params['email'],

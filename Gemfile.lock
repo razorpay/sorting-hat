@@ -1,17 +1,17 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    clearbit (0.1.6)
-      nestful (~> 1.0.7)
-    clearbit-slack (0.1.2)
-      clearbit (~> 0.1.6)
+    clearbit (0.2.2)
+      nestful (~> 1.1.0)
+    clearbit-slack (0.1.3)
+      clearbit (~> 0.2.2)
       maccman-mash (~> 0.0.2)
       slack-notifier (~> 1.2.1)
     daemons (1.2.3)
-    eventmachine (1.0.7)
+    eventmachine (1.0.8)
     full-name-splitter (0.1.2)
     maccman-mash (0.0.2)
-    nestful (1.0.7)
+    nestful (1.1.1)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -20,9 +20,9 @@ GEM
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
     slack-notifier (1.2.1)
-    thin (1.6.3)
+    thin (1.6.4)
       daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0)
+      eventmachine (~> 1.0, >= 1.0.4)
       rack (~> 1.0)
     tilt (2.0.1)
 
@@ -30,7 +30,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  clearbit
   clearbit-slack
   full-name-splitter
   sinatra
