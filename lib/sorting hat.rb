@@ -30,13 +30,16 @@ post '/' do
   # Get data from clearbit
   begin
     clearbit_response = Clearbit::Enrichment.find(email: params['email'], stream: true)
+
   rescue Exception => e
+
     Clearbit::Slack.ping({
       email: params['email'],
       given_name: first_name || "",
       family_name: last_name || "",
       message: params['message'] || "New Signup"
     })
+
     status 503
     body "Error in clearbit configuration or API. Posted to Slack Directly"
     return
@@ -47,7 +50,7 @@ post '/' do
     email: params['email'],
     given_name: first_name,
     family_name: last_name,
-    message: "New Signup"
+    message: params['message'] || "New Signup"
   )
 
   # Send it to slack
