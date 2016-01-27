@@ -3,13 +3,23 @@ require 'json'
 require 'full-name-splitter'
 
 def validate(params)
+
+  unless params.has_key? 'token'
+    msg = "No token provided"
+  end
+
   unless params.has_key? 'name'
-    msg="Name not provided"
+    msg = "Name not provided"
   end
 
   unless params['email'] =~ /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-    msg="Invalid Email Address"
+    msg = "Invalid Email Address"
   end
+
+  unless params['token'].strip == ENV['TOKEN'].strip
+   msg = "Invalid token"
+  end
+
   if msg
     status 400
     body msg
